@@ -4,7 +4,7 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package Marx WP Theme
+ * @package marx_wp_theme
  */
 ?>
 
@@ -12,10 +12,9 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<?php do_action( 'marx_wp_theme_credits' ); ?>
-			<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'marx_wp_theme' ), 'WordPress' ); ?></a>
+			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'marx_wp_theme' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'marx_wp_theme' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'marx_wp_theme' ), 'marx_wp_theme', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
+			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'marx_wp_theme' ), 'marx_wp_theme', '<a href="http://ayitey.me" rel="designer">Claude Ayitey</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

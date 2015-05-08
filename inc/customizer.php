@@ -1,8 +1,8 @@
 <?php
 /**
- * Marx WP Theme Theme Customizer
+ * marx_wp_theme Theme Customizer
  *
- * @package Marx WP Theme
+ * @package marx_wp_theme
  */
 
 /**

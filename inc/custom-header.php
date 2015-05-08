@@ -7,22 +7,20 @@
 
 	<?php if ( get_header_image() ) : ?>
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-		<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+		<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
 	</a>
 	<?php endif; // End header image check. ?>
 
  *
- * @package Marx WP Theme
+ * @package marx_wp_theme
  */
 
 /**
- * Setup the WordPress core custom header feature.
+ * Set up the WordPress core custom header feature.
  *
  * @uses marx_wp_theme_header_style()
  * @uses marx_wp_theme_admin_header_style()
  * @uses marx_wp_theme_admin_header_image()
- *
- * @package Marx WP Theme
  */
 function marx_wp_theme_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'marx_wp_theme_custom_header_args', array(
@@ -71,7 +69,7 @@ function marx_wp_theme_header_style() {
 	?>
 		.site-title a,
 		.site-description {
-			color: #<?php echo $header_text_color; ?>;
+			color: #<?php echo esc_attr( $header_text_color ); ?>;
 		}
 	<?php endif; ?>
 	</style>
