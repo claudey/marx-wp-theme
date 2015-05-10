@@ -1,6 +1,6 @@
 /*
-Theme Name: marx_wp_theme
-Theme URI: http://underscores.me/
+Theme Name: Marx WP Theme
+Theme URI: http://github.com/claudey/marx_wp_theme
 Author: Claude Ayitey
 Author URI: http://ayitey.me
 Description: This is a custom theme based on the marx css framework started by Matthew Blode. This theme has been extended and customized by Claude Ayitey.
@@ -8,7 +8,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: marx_wp_theme
-Tags:
+Tags: 
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -19,871 +19,465 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-    ## Posts and pages
-	## Asides
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
-html {
-	font-family: sans-serif;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust:     100%;
-}
-
-body {
-	margin: 0;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
-	display: block;
-}
-
-audio,
-canvas,
-progress,
-video {
-	display: inline-block;
-	vertical-align: baseline;
-}
+:root {
+  box-sizing: border-box;
+  cursor: default;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, 'Lucida Grande', sans-serif;
+  line-height: 1.4;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow-y: scroll;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%; }
 
 audio:not([controls]) {
-	display: none;
-	height: 0;
-}
+  display: none; }
 
-[hidden],
-template {
-	display: none;
-}
+details {
+  display: block; }
 
-a {
-	background-color: transparent;
-}
+input[type="number"] {
+  width: auto; }
+input[type="search"] {
+  -webkit-appearance: textfield; }
+  input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none; }
 
-a:active,
-a:hover {
-	outline: 0;
-}
+main {
+  display: block; }
 
-abbr[title] {
-	border-bottom: 1px dotted;
-}
+summary {
+  display: block; }
 
-b,
-strong {
-	font-weight: bold;
-}
+pre {
+  overflow: auto; }
 
-dfn {
-	font-style: italic;
-}
-
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
-}
-
-mark {
-	background: #ff0;
-	color: #000;
-}
+progress {
+  display: inline-block; }
 
 small {
-	font-size: 80%;
-}
-
-sub,
-sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-}
-
-sup {
-	top: -0.5em;
-}
-
-sub {
-	bottom: -0.25em;
-}
-
-img {
-	border: 0;
-}
-
-svg:not(:root) {
-	overflow: hidden;
-}
-
-figure {
-	margin: 1em 40px;
-}
-
-hr {
-	box-sizing: content-box;
-	height: 0;
-}
-
-pre {
-	overflow: auto;
-}
-
-code,
-kbd,
-pre,
-samp {
-	font-family: monospace, monospace;
-	font-size: 1em;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-	color: inherit;
-	font: inherit;
-	margin: 0;
-}
-
-button {
-	overflow: visible;
-}
-
-button,
-select {
-	text-transform: none;
-}
-
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	-webkit-appearance: button;
-	cursor: pointer;
-}
-
-button[disabled],
-html input[disabled] {
-	cursor: default;
-}
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
-}
-
-input {
-	line-height: normal;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-	box-sizing: border-box;
-	padding: 0;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-	height: auto;
-}
-
-input[type="search"] {
-	-webkit-appearance: textfield;
-	box-sizing: content-box;
-}
-
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-	-webkit-appearance: none;
-}
-
-fieldset {
-	border: 1px solid #c0c0c0;
-	margin: 0 2px;
-	padding: 0.35em 0.625em 0.75em;
-}
-
-legend {
-	border: 0;
-	padding: 0;
-}
-
-textarea {
-	overflow: auto;
-}
-
-optgroup {
-	font-weight: bold;
-}
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-td,
-th {
-	padding: 0;
-}
-
-/*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
-body,
-button,
-input,
-select,
-textarea {
-	color: #404040;
-	font-size: 16px;
-	font-size: 1rem;
-	line-height: 1.5;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	clear: both;
-}
-
-p {
-	margin-bottom: 1.5em;
-}
-
-dfn,
-cite,
-em,
-i {
-	font-style: italic;
-}
-
-blockquote {
-	margin: 0 1.5em;
-}
-
-address {
-	margin: 0 0 1.5em;
-}
-
-pre {
-	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
-	line-height: 1.6;
-	margin-bottom: 1.6em;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1.6em;
-}
-
-code,
-kbd,
-tt,
-var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
-}
-
-abbr,
-acronym {
-	border-bottom: 1px dotted #666;
-	cursor: help;
-}
-
-mark,
-ins {
-	background: #fff9c0;
-	text-decoration: none;
-}
+  font-size: 75%; }
 
 big {
-	font-size: 125%;
-}
+  font-size: 125%; }
 
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-html {
-	box-sizing: border-box;
-}
+template {
+  display: none; }
 
-*,
-*:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
-}
+textarea {
+  overflow: auto;
+  resize: vertical; }
 
-body {
-	background: #fff; /* Fallback for when there is no custom background color defined. */
-}
+[hidden] {
+  display: none; }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: "";
-}
+[unselectable] {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
 
-blockquote,
-q {
-	quotes: "" "";
-}
+*, ::before, ::after {
+  border-style: solid;
+  border-width: 0;
+  box-sizing: inherit; }
 
-hr {
-	background-color: #ccc;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
-}
+* {
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0; }
 
-ul,
-ol {
-	margin: 0 0 1.5em 3em;
-}
+::before, ::after {
+  text-decoration: inherit;
+  vertical-align: inherit; }
 
-ul {
-	list-style: disc;
-}
+a {
+  text-decoration: none; }
 
-ol {
-	list-style: decimal;
-}
+audio, canvas, iframe, img, svg, video {
+  vertical-align: middle; }
 
-li > ul,
-li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
-}
+button, input, select, textarea {
+  background-color: transparent;
+  border: .1rem solid #ccc;
+  color: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  min-height: 1.4em; }
 
-dt {
-	font-weight: bold;
-}
-
-dd {
-	margin: 0 1.5em 1.5em;
-}
-
-img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
-}
+code, kbd, pre, samp {
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace, monospace; }
 
 table {
-	margin: 0 0 1.5em;
-	width: 100%;
-}
+  border-collapse: collapse;
+  border-spacing: 0; }
 
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
-	font-size: 12px;
-	font-size: 0.75rem;
-	line-height: 1;
-	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-}
+::-moz-selection {
+  background-color: #b3d4fc;
+  text-shadow: none; }
 
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-}
+::selection {
+  background-color: #b3d4fc;
+  text-shadow: none; }
 
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active {
-	border-color: #aaa #bbb #bbb;
-	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
-}
+button::-moz-focus-inner {
+  border: 0; }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-}
+@media screen {
+  [hidden~="screen"] {
+    display: inherit; }
+  [hidden~="screen"]:not(:active):not(:focus):not(:target) {
+    clip: rect(0 0 0 0) !important;
+    position: absolute !important; } }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-textarea:focus {
-	color: #111;
-}
+body {
+  color: #444;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, 'Lucida Grande', sans-serif;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400; }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"] {
-	padding: 3px;
-}
+p {
+  margin: 0 0 1.6rem; }
 
-textarea {
-	padding-left: 3px;
-	width: 100%;
-}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', 'Open Sans', 'Helvetica Neue', Helvetica, 'Lucida Grande', sans-serif;
+  margin: 2rem 0 1.6rem; }
 
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Links
---------------------------------------------------------------*/
+h1 {
+  border-bottom: .1rem solid rgba(0, 0, 0, 0.2);
+  font-size: 3.6rem;
+  font-style: normal;
+  font-weight: 500; }
+
+h2 {
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 500; }
+
+h3 {
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 500;
+  margin: 1.6rem 0 0.4rem; }
+
+h4 {
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 600;
+  margin: 1.6rem 0 0.4rem; }
+
+h5 {
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  margin: 1.6rem 0 0.4rem; }
+
+h6 {
+  color: #777;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 600;
+  margin: 1.6rem 0 0.4rem; }
+
+small {
+  color: #777; }
+
+pre {
+  background: #efefef;
+  color: #444;
+  display: block;
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-size: 1.4rem;
+  margin: 1.6rem 0;
+  padding: 1.6rem;
+  word-break: break-all;
+  word-wrap: break-word; }
+
+code {
+  background: #efefef;
+  color: #444;
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-size: 1.4rem;
+  word-break: break-all;
+  word-wrap: break-word; }
+
 a {
-	color: royalblue;
-}
+  color: #1271db;
+  -webkit-transition: .25s ease;
+          transition: .25s ease; }
+  a:hover, a:focus {
+    text-decoration: none; }
 
-a:visited {
-	color: purple;
-}
+dl {
+  margin-bottom: 1.6rem; }
 
-a:hover,
-a:focus,
-a:active {
-	color: midnightblue;
-}
+dd {
+  margin-left: 4rem; }
 
-a:focus {
-	outline: thin dotted;
-}
+ul, ol {
+  margin-bottom: 0.8rem;
+  padding-left: 2rem; }
 
-a:hover,
-a:active {
-	outline: 0;
-}
+blockquote {
+  border-left: .2rem solid #1271db;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  font-style: italic;
+  margin: 1.6rem 0;
+  padding-left: 1.6rem; }
 
-/*--------------------------------------------------------------
-## Menus
---------------------------------------------------------------*/
-.main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
-}
+figcaption {
+  font-family: Georgia, Times, 'Times New Roman', serif; }
 
-.main-navigation ul {
-	display: none;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
+html {
+  font-size: 62.5%; }
 
-.main-navigation li {
-	float: left;
-	position: relative;
-}
+body {
+  padding: 0; }
 
-.main-navigation a {
-	display: block;
-	text-decoration: none;
-}
+main, header, footer, article, section, aside, details, summary {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  width: 100%; }
 
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 1.5em;
-	left: -999em;
-	z-index: 99999;
-}
+main {
+  display: block;
+  margin: 0 auto;
+  max-width: 76.8rem;
+  padding: 0 1.6rem 1.6rem; }
 
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
-}
+article {
+  clear: left;
+  display: inline-block;
+  float: left;
+  margin-bottom: 1.6rem;
+  max-width: calc(60% - 1rem); }
 
-.main-navigation ul ul a {
-	width: 200px;
-}
+aside {
+  clear: right;
+  display: inline-block;
+  float: right;
+  margin-bottom: 1.6rem;
+  max-width: calc(40% - 1rem); }
 
-.main-navigation ul ul li {
+section {
+  clear: both;
+  display: inline-block;
+  float: left;
+  margin-bottom: 1.6rem;
+  max-width: 100%; }
 
-}
+footer {
+  border-top: .1rem solid rgba(0, 0, 0, 0.2);
+  clear: both;
+  display: inline-block;
+  float: left;
+  max-width: 100%;
+  padding: 1rem 0;
+  text-align: center; }
 
-.main-navigation li:hover > a,
-.main-navigation li.focus > a {
-}
+hr {
+  border-top: .1rem solid rgba(0, 0, 0, 0.2);
+  display: block;
+  margin-bottom: 1.6rem;
+  width: 100%; }
 
-.main-navigation ul ul :hover > a,
-.main-navigation ul ul .focus > a {
-}
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: baseline; }
 
-.main-navigation ul ul a:hover,
-.main-navigation ul ul a.focus {
-}
+@media screen and (max-width: 40rem) {
+  article, section, aside {
+    clear: both;
+    display: block;
+    max-width: 100%; }
+  img {
+    margin-right: 1.6rem; } }
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
-}
+input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="date"], input[type="month"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="week"], input[type="number"], input[type="search"], input[type="tel"], input[type="color"], select {
+  border: .1rem solid #ccc;
+  border-radius: 0;
+  display: inline-block;
+  padding: 0.8rem;
+  vertical-align: middle; }
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	left: 100%;
-}
+input:not([type]) {
+  -webkit-appearance: none;
+  background-clip: padding-box;
+  background-color: #fff;
+  border: .1rem solid #ccc;
+  border-radius: 0;
+  color: #444;
+  display: inline-block;
+  padding: 0.8rem;
+  text-align: left; }
 
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a {
-}
+input[type="color"] {
+  padding: 0.8rem 1.6rem; }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, select:focus, textarea:focus {
+  border-color: #b3d4fc; }
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
-}
+input:not([type]):focus {
+  border-color: #b3d4fc; }
 
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
-}
+input[type="radio"], input[type="checkbox"] {
+  vertical-align: middle; }
 
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
-}
+input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus {
+  outline: .1rem solid thin #444; }
 
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
-}
+input[type="text"][disabled], input[type="password"][disabled], input[type="email"][disabled], input[type="url"][disabled], input[type="date"][disabled], input[type="month"][disabled], input[type="time"][disabled], input[type="datetime"][disabled], input[type="datetime-local"][disabled], input[type="week"][disabled], input[type="number"][disabled], input[type="search"][disabled], input[type="tel"][disabled], input[type="color"][disabled], select[disabled], textarea[disabled] {
+  background-color: #efefef;
+  color: #777;
+  cursor: not-allowed; }
 
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-/* Text meant only for screen readers. */
-.screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-}
+input:not([type])[disabled] {
+  background-color: #efefef;
+  color: #777;
+  cursor: not-allowed; }
 
-.screen-reader-text:hover,
-.screen-reader-text:active,
-.screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	color: #21759b;
-	display: block;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: bold;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000; /* Above WP toolbar. */
-}
+input[readonly], select[readonly], textarea[readonly] {
+  background-color: #efefef;
+  border-color: #ccc;
+  color: #777; }
 
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-.alignleft {
-	display: inline;
-	float: left;
-	margin-right: 1.5em;
-}
+input:focus:invalid, textarea:focus:invalid, select:focus:invalid {
+  border-color: #e9322d;
+  color: #b94a48; }
 
-.alignright {
-	display: inline;
-	float: right;
-	margin-left: 1.5em;
-}
+input[type="file"]:focus:invalid:focus, input[type="radio"]:focus:invalid:focus, input[type="checkbox"]:focus:invalid:focus {
+  outline-color: #ff4136; }
 
-.aligncenter {
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
+select {
+  background-color: #fff;
+  border: .1rem solid #ccc; }
 
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
-	content: "";
-	display: table;
-}
+select[multiple] {
+  height: auto; }
 
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
-	clear: both;
-}
+label {
+  line-height: 2; }
 
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-.widget {
-	margin: 0 0 1.5em;
-}
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0.8rem 0; }
 
-/* Make sure select elements fit in widgets. */
-.widget select {
-	max-width: 100%;
-}
+legend {
+  border-bottom: .1rem solid #ccc;
+  color: #444;
+  display: block;
+  margin-bottom: 0.8rem;
+  padding: 0.8rem 0;
+  width: 100%; }
 
-/* Search widget. */
-.widget_search .search-submit {
-	display: none;
-}
+textarea {
+  border: .1rem solid #ccc;
+  border-radius: 0;
+  display: block;
+  margin-bottom: 0.8rem;
+  padding: 0.8rem;
+  vertical-align: middle; }
 
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Posts and pages
---------------------------------------------------------------*/
-.sticky {
-	display: block;
-}
+input[type=submit], button {
+  background-color: transparent;
+  border: .2rem solid #444;
+  border-radius: 0;
+  color: #444;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  margin-right: 0.4rem;
+  padding: 0.8rem 1.6rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: .25s ease;
+          transition: .25s ease;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: baseline; }
+  input[type=submit] a, button a {
+    color: #444; }
 
-.hentry {
-	margin: 0 0 1.5em;
-}
+input[type=submit]::-moz-focus-inner, button::-moz-focus-inner {
+  padding: 0; }
 
-.byline,
-.updated:not(.published) {
-	display: none;
-}
+input[type=submit]:hover, button:hover {
+  background: #444;
+  border-color: #444;
+  color: #fff; }
+  input[type=submit]:hover a, button:hover a {
+    color: #fff; }
 
-.single .byline,
-.group-blog .byline {
-	display: inline;
-}
+input[type=submit]:active, button:active {
+  background: #6a6a6a;
+  border-color: #6a6a6a;
+  color: #fff; }
+  input[type=submit]:active a, button:active a {
+    color: #fff; }
 
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
+input[type=submit]:disabled, button:disabled {
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: .40; }
 
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 1.6rem;
+  text-align: center; }
+  nav ul li {
+    display: inline; }
+nav a {
+  border-bottom: .2rem solid transparent;
+  color: #444;
+  padding: 0.8rem 1.6rem;
+  text-decoration: none;
+  -webkit-transition: .25s ease;
+          transition: .25s ease; }
+  nav a:hover {
+    border-color: rgba(0, 0, 0, 0.2); }
+  nav a:active {
+    border-color: rgba(0, 0, 0, 0.56); }
 
-/*--------------------------------------------------------------
-## Asides
---------------------------------------------------------------*/
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-	display: none;
-}
+table {
+  margin-bottom: 1.6rem; }
 
-/*--------------------------------------------------------------
-## Comments
---------------------------------------------------------------*/
-.comment-content a {
-	word-wrap: break-word;
-}
+caption {
+  padding: 0.8rem 0; }
 
-.bypostauthor {
-	display: block;
-}
+thead th {
+  background: #efefef;
+  color: #444; }
 
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
-	display: none;
-}
+tr {
+  background: #fff;
+  margin-bottom: 0.8rem; }
 
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer {
-	display: block;
-}
+th, td {
+  border: .1rem solid #ccc;
+  padding: 0.8rem 1.6rem;
+  text-align: center;
+  vertical-align: inherit; }
 
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
-}
+tfoot tr {
+  background: none; }
 
-/* Make sure embeds and iframes fit their containers. */
-embed,
-iframe,
-object {
-	max-width: 100%;
-}
+tfoot td {
+  color: #efefef;
+  font-size: 0.8rem;
+  font-style: italic;
+  padding: 1.6rem 0.4rem; }
 
-/*--------------------------------------------------------------
-## Captions
---------------------------------------------------------------*/
-.wp-caption {
-	margin-bottom: 1.5em;
-	max-width: 100%;
-}
-
-.wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin: 0 auto;
-}
-
-.wp-caption-text {
-	text-align: center;
-}
-
-.wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
-}
-
-/*--------------------------------------------------------------
-## Galleries
---------------------------------------------------------------*/
-.gallery {
-	margin-bottom: 1.5em;
-}
-
-.gallery-item {
-	display: inline-block;
-	text-align: center;
-	vertical-align: top;
-	width: 100%;
-}
-
-.gallery-columns-2 .gallery-item {
-	max-width: 50%;
-}
-
-.gallery-columns-3 .gallery-item {
-	max-width: 33.33%;
-}
-
-.gallery-columns-4 .gallery-item {
-	max-width: 25%;
-}
-
-.gallery-columns-5 .gallery-item {
-	max-width: 20%;
-}
-
-.gallery-columns-6 .gallery-item {
-	max-width: 16.66%;
-}
-
-.gallery-columns-7 .gallery-item {
-	max-width: 14.28%;
-}
-
-.gallery-columns-8 .gallery-item {
-	max-width: 12.5%;
-}
-
-.gallery-columns-9 .gallery-item {
-	max-width: 11.11%;
-}
-
-.gallery-caption {
-	display: block;
-}
+/*# sourceMappingURL=marx.css.map */

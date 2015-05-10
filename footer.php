@@ -17,7 +17,7 @@
 			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'marx_wp_theme' ), 'marx_wp_theme', '<a href="http://ayitey.me" rel="designer">Claude Ayitey</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-</div><!-- #page -->
+</main><!-- #page -->
 
 <?php wp_footer(); ?>
 
